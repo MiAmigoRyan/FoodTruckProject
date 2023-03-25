@@ -7,7 +7,6 @@ public class FoodTruck {
 	private String name;	
 
 
-	//constructors	
 	public FoodTruck (int truckId, String name, String foodType, int rating ) {
 		this.truckId = truckId;
 		this.name = name;
@@ -16,14 +15,11 @@ public class FoodTruck {
 	}
 	
 
-	//toString method
 	@Override
 	public String toString() {
 		return "FoodTruck [truckId=" + truckId + ", rating=" + rating + ", foodType=" + foodType + ", name=" + name
-				+ "]";
-	
+				+ "]";	
 	}
-
 
 	public int getTruckId() {
 		return truckId;

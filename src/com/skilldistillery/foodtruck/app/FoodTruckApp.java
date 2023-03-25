@@ -60,7 +60,7 @@ public class FoodTruckApp {
 		boolean running = true;
 		while (running) {
 			System.out.println(   
-					" *********************************************" 
+				" *********************************************" 
 				  + "\n 1. List Food Trucks"
 				  + "\n 2. View Average Rating of Food Trucks" 
 				  + "\n 3. View Highest Rated Food Truck" 

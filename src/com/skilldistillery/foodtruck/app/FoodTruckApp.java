@@ -42,6 +42,7 @@ public class FoodTruckApp {
 					System.out.println("not a valid rating you must enter number between 1 and 3");
 					rating = sc.nextInt();
 				}
+				sc.nextLine();
 				fleet[truck] = new FoodTruck(truckId, name, type, rating);
 
 				counter++;
@@ -67,6 +68,7 @@ public class FoodTruckApp {
 				  + "\n 4. Quit "
 				  + "\n *********************************************");
 			int choice = sc.nextInt();
+			sc.nextLine();
 			switch (choice) {
 			case 1:
 				System.out.println(truckNames());

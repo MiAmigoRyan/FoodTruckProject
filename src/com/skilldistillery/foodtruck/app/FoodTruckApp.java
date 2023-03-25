@@ -53,37 +53,38 @@ public class FoodTruckApp {
 		if (quit == true || counter >= 5) {
 			menu(fleet);
 		}
+		sc.close();
 	}
 
 	public void exit() {
 		System.out.println("Thank you for rating Food Trucks!!!");
 
-		sc.close();
 	}
 
 	public void menu(FoodTruck[] fleet) {
-
-		System.out.println(" *********************************************" + "\n 1. List Food Trucks"
-				+ "\n 2. View Average Rating of Food Trucks" + "\n 3. View Highest Rated Food Truck" + "\n 4. Quit "
-				+ "\n *********************************************");
-		int choice = sc.nextInt();
-		switch (choice) {
-		case 1:
-			// LIST
-			System.out.println(truckNames(fleet));
-			break;
-		case 2:
-			// AVERAGE RATING
-			System.out.println(avgRating(fleet));
-			break;
-		case 3:
-			System.out.println(topRating(fleet));
-			break;
-		case 4:
-			exit();
-			break;
-		default:
-
+		while (true) {
+			System.out.println(" *********************************************" + "\n 1. List Food Trucks"
+					+ "\n 2. View Average Rating of Food Trucks" + "\n 3. View Highest Rated Food Truck" + "\n 4. Quit "
+					+ "\n *********************************************");
+			int choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				// LIST
+				System.out.println(truckNames(fleet));
+				break;
+			case 2:
+				// AVERAGE RATING
+				System.out.println(avgRating(fleet));
+				break;
+			case 3:
+				System.out.println(topRating(fleet));
+				break;
+			case 4:
+				exit();
+				break;
+			default:
+				System.out.println("not a valid entry.");
+			}
 		}
 	}
 
@@ -91,7 +92,7 @@ public class FoodTruckApp {
 		String names = "";
 		for (int truck = 0; truck < fleet.length; truck++) {
 			if (fleet[truck] != null) {
-				names += fleet[truck].getName() + "\n" + "\t";
+				names += fleet[truck].getName() + "\n";
 			}
 		}
 		return names;
@@ -111,9 +112,13 @@ public class FoodTruckApp {
 
 	public FoodTruck topRating(FoodTruck[] fleet) {
 		FoodTruck topRated = null;
+		int nextRate = 0;
 		for (int truck = 0; truck < fleet.length; truck++) {
-			if (fleet[truck] != null && topRated == null || fleet[truck].getRating() > topRated.getRating()) {
-				topRated = fleet[truck];
+			if (fleet[truck] != null) {
+				if (fleet[truck].getRating() > nextRate) {
+					nextRate = fleet[truck].getRating();
+					topRated = fleet[truck];
+				}
 			}
 		}
 		return topRated;

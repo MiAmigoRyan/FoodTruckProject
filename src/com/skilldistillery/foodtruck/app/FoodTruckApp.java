@@ -59,12 +59,13 @@ public class FoodTruckApp {
 	public void menu() {
 		boolean running = true;
 		while (running) {
-			System.out.println(   " *********************************************" 
-								+ "\n 1. List Food Trucks"
-								+ "\n 2. View Average Rating of Food Trucks" 
-								+ "\n 3. View Highest Rated Food Truck" 
-								+ "\n 4. Quit "
-								+ "\n *********************************************");
+			System.out.println(   
+					" *********************************************" 
+				  + "\n 1. List Food Trucks"
+				  + "\n 2. View Average Rating of Food Trucks" 
+				  + "\n 3. View Highest Rated Food Truck" 
+				  + "\n 4. Quit "
+				  + "\n *********************************************");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
